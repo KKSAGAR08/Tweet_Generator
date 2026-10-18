@@ -1,0 +1,24 @@
+{% extends "base.html" %} 
+{% load static %}
+
+{% block header %}
+<title>Home-Page</title>
+<link rel="stylesheet" href='{% static "css/home.css" %}' />
+{% endblock header %} 
+
+
+{% block content %}
+
+<nav class="navbar">
+  <h3>AI Brand Tweet Generator</h3>
+</nav>
+<main class="main">
+  <span>AI Brand <span class="title-2"> Tweet Generator</span> </span>
+  <span class="subheader"
+    >Turn your brand ideas into 10 on-brand tweets using the power of Al.</span
+  >
+  <a href="{% url 'form_page' %}">
+  <button class="get-started">Get Started</button>
+  </a>
+</main>
+{% endblock content %}

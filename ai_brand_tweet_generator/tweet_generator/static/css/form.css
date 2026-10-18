@@ -1,0 +1,208 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+.navbar {
+  height: 80px;
+  background-color: rgb(11, 16, 29);
+  color: rgb(154, 163, 180);
+  display: flex;
+  align-items: center;
+  padding: 0px 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar button {
+  padding: 12px 30px;
+  background-color: transparent;
+  color: white;
+  font-weight: bold;
+  font-size: 13px;
+  border: 1px solid rgb(126, 76, 252);
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.brand-details-section {
+  padding: 20px 0px;
+  background-color: rgb(18 26 44);
+  height: calc(100vh - 80px);
+  color: #f5f7fc;
+  font-family: Inter, Arial, sans-serif;
+}
+
+.brand-details-section *,
+.brand-details-section *::before,
+.brand-details-section *::after {
+  box-sizing: border-box;
+}
+
+.brand-form-container {
+  width: 100%;
+  max-width: 1038px;
+  margin: 0 auto;
+  padding: 25px 29px 20px;
+  background: linear-gradient(125deg, #111c2d 0%, #0e1929 100%);
+  border: 1px solid #202d42;
+  border-radius: 11px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+.form-heading {
+  margin-bottom: 10px;
+}
+
+.form-heading h1 {
+  margin: 0 0 6px;
+  color: #f5f7fc;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: -0.6px;
+}
+
+.form-heading p {
+  margin: 0;
+  color: #9eacc3;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 21px;
+  row-gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  margin-bottom: 7px;
+  color: #f0f2f8;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.optional {
+  color: #9caac0;
+  font-weight: 400;
+}
+
+.required {
+  color: #ffb6c1;
+  font-weight: 600;
+}
+
+.brand-form input,
+.brand-form select,
+.brand-form textarea {
+  width: 100%;
+  border: 1px solid #42516a;
+  border-radius: 8px;
+  background: linear-gradient(110deg, #1b293e, #182538);
+  color: #f4f6fc;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  outline: none;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.brand-form input,
+.brand-form select {
+  height: 42px;
+  padding: 0 13px;
+}
+
+.brand-form textarea {
+  height: 76px;
+  min-height: 76px;
+  padding: 12px 13px;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+.brand-form textarea.additional-textarea {
+  height: 64px;
+  min-height: 64px;
+}
+
+.brand-form input::placeholder,
+.brand-form textarea::placeholder {
+  color: #8997ad;
+  opacity: 1;
+}
+
+.brand-form input:focus,
+.brand-form select:focus,
+.brand-form textarea:focus {
+  border-color: #9651ff;
+  box-shadow: 0 0 0 2px rgba(150, 81, 255, 0.14);
+}
+
+.brand-form select {
+  cursor: pointer;
+  color-scheme: dark;
+}
+
+.brand-form select option {
+  background: #172338;
+  color: #f5f7fc;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 29px;
+}
+
+.generate-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 11px;
+  width: 362px;
+  max-width: 100%;
+  min-height: 46px;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 9px;
+  background: linear-gradient(105deg, #773cf0 0%, #8739f6 100%);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s,
+    filter 0.2s;
+}
+
+.generate-btn:hover {
+  filter: brightness(1.12);
+  transform: translateY(-2px);
+  box-shadow: 0 7px 22px rgba(126, 60, 240, 0.25);
+}
+
+.generate-btn:active {
+  transform: translateY(0);
+}
+
+.arrow {
+  font-size: 22px;
+  line-height: 1;
+}

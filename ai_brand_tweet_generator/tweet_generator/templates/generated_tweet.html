@@ -1,0 +1,57 @@
+{% extends "base.html" %} 
+{% load static %}
+
+{% block header %}
+<title>Tweet-Page</title>
+<link rel="stylesheet" href='{% static "css/generated_tweet.css" %}' />
+{% endblock header %} 
+
+{% block content %}
+
+<nav class="navbar">
+  <h3>AI Brand Tweet Generator</h3>
+
+  <div style="display: flex; gap: 10px">
+    <a href="{% url 'home_page' %}">
+      <button>Home</button>
+    </a>
+  </div>
+</nav>
+
+<main class="tweets">
+  <div class="summary">
+    <h3>Summary</h3>
+    <span> {{ brand_summery }} </span>
+  </div>
+
+  <span class="tweet-heading"
+    >10
+    <span class="tweet-heading" style="color: rgb(132, 90, 226)"
+      >Generated Tweets</span
+    ></span
+  >
+
+  <div class="tweet-container">
+    {% for tweet in tweets %}
+      <div class="tweet-box">
+          <div class="box-inside">
+                <p>{{ forloop.counter }}</p>
+                <button onclick='copyTweet("{{ tweet }}")'>Copy</button>
+          </div>
+          <span>{{ tweet }}</span>
+        </div>
+    {% endfor %}
+  </div>
+</main>
+
+<script>
+async function copyTweet(tweet) {
+    try {
+      await navigator.clipboard.writeText(tweet);
+      alert('copy successfull')
+    } catch (error) {
+        console.error("Copy failed:", error);
+    }
+}
+</script>
+{% endblock content %}

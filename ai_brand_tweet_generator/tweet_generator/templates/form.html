@@ -1,0 +1,139 @@
+{% extends "base.html" %} 
+{% load static %} 
+
+{% block header %}
+<title>Form-Page</title>
+<link rel="stylesheet" href='{% static "css/form.css" %}' />
+{% endblock header %} 
+
+{% block content %}
+
+<nav class="navbar">
+  <h3>AI Brand Tweet Generator</h3>
+  <a href="{% url 'home_page' %}">
+      <button>Home</button>
+  </a>
+</nav>
+<section class="brand-details-section">
+  <div class="brand-form-container">
+    <div class="form-heading">
+      <h1>Tell us about your brand</h1>
+      <p>
+        Fill in the details below so we can generate 10 on-brand tweets for you.
+      </p>
+    </div>
+
+    <form method="post" class="brand-form">
+      {% csrf_token %}
+      <div class="form-grid">
+        <!-- Brand Name -->
+        <div class="form-group">
+          <label for="brand_name">
+            Brand Name <span class="required">*</span>
+          </label>
+          <input
+            type="text"
+            id="brand_name"
+            name="brand_name"
+            placeholder="e.g. Nike"
+            required
+          />
+        </div>
+
+        <!-- Industry -->
+        <div class="form-group">
+          <label for="industry">
+            Industry / Category <span class="required">*</span>
+          </label>
+          <input
+            type="text"
+            id="industry"
+            name="industry"
+            placeholder="e.g. Sports, Fashion, Technology"
+            required
+          />
+        </div>
+
+        <!-- Campaign Objective -->
+        <div class="form-group">
+          <label for="objective">
+            Campaign Objective <span class="required">*</span>
+          </label>
+          <select id="objective" name="objective" required>
+            <option value="Engagement" selected>Engagement</option>
+            <option value="Brand Awareness">Brand Awareness</option>
+            <option value="Lead Generation">Lead Generation</option>
+            <option value="Product Promotion">Product Promotion</option>
+            <option value="Website Traffic">Website Traffic</option>
+            <option value="Sales">Sales</option>
+            <option value="Community Building">Community Building</option>
+          </select>
+        </div>
+
+        <!-- Target Audience -->
+        <div class="form-group">
+          <label for="audience">
+            Target Audience <span class="required">*</span>
+          </label>
+          <input
+            type="text"
+            id="audience"
+            name="audience"
+            placeholder="e.g. Young adults, Professionals, Students"
+            required
+          />
+        </div>
+
+        <!-- Products / Services -->
+        <div class="form-group">
+          <label for="products">
+            Products / Services <span class="required">*</span>
+          </label>
+          <textarea
+            id="products"
+            name="products"
+            placeholder="Describe your products or services..."
+            required
+          ></textarea>
+        </div>
+
+        <!-- Preferred Tone -->
+        <div class="form-group">
+          <label for="tone">
+            Preferred Tone <span class="optional">(Optional)</span>
+          </label>
+          <select id="tone" name="tone">
+            <option value="Witty" selected>Witty</option>
+            <option value="Professional">Professional</option>
+            <option value="Friendly">Friendly</option>
+            <option value="Funny">Funny</option>
+            <option value="Bold">Bold</option>
+            <option value="Inspirational">Inspirational</option>
+            <option value="Casual">Casual</option>
+            <option value="Persuasive">Persuasive</option>
+          </select>
+        </div>
+
+        <!-- Additional Information -->
+        <div class="form-group full-width">
+          <label for="additional_info">
+            Additional Information <span class="optional">(Optional)</span>
+          </label>
+          <textarea
+            id="additional_info"
+            name="additional_info"
+            class="additional-textarea"
+            placeholder="Any other details about your brand, ongoing campaigns, or specific themes..."
+          ></textarea>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="generate-btn">
+          Generate 10 Tweets <span class="arrow">&rarr;</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+{% endblock content %}

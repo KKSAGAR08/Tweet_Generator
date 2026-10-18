@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+}
+.navbar {
+  height: 80px;
+  background-color: rgb(11, 16, 29);
+  color: rgb(154, 163, 180);
+  display: flex;
+  align-items: center;
+}
+.navbar h3 {
+  margin-left: 30px;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 80px);
+  background-color: rgb(18 26 44);
+  gap: 15px;
+}
+.main span:nth-child(1) {
+  color: white;
+  font-size: 65px;
+}
+.main span .title-2 {
+  color: rgb(160, 82, 255);
+}
+.subheader {
+  font-size: 30px;
+  color: rgb(175, 187, 209);
+}
+.get-started {
+  padding: 12px 60px;
+  font-size: 20px;
+  color: white;
+  background-color: rgb(175, 91, 255);
+  border: 1px solid rgb(175, 91, 255);
+  border-radius: 7px;
+  cursor: pointer;
+}
