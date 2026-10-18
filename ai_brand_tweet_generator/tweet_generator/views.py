@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from .helper import generate_tweet
 import json
+import os
+import psutil
 
 def home_page_view(request):
 
@@ -29,3 +31,9 @@ def form_page_view(request):
 
     return render(request,'form.html')
 
+
+
+def get_django_ram_usage(request):
+    process = psutil.Process(os.getpid())
+    ram_mb = process.memory_info().rss / (1024 ** 2)
+    print(f"Current Django Process RAM Usage: {ram_mb:.2f} MB")
